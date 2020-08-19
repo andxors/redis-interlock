@@ -1,12 +1,12 @@
-# Template
-Template for ruby gem.
+# Redis::Interlock
+Implementation of mutex in Redis.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'template'
+gem 'redis-interlock'
 ```
 
 And then execute:
@@ -15,11 +15,22 @@ And then execute:
 
 Or install it yourself as:
 
-    gem install template
+    gem install redis-interlock
 
 ## Usage
 
-TODO: Write usage instructions here
+To use the lock redis:
+```ruby
+mutex = Redis::Interlock.new(redis: Redis.new, name: 'lock_name', seconds: 60)
+mutex.lock! { 'some_code' }
+```
+or
+```ruby
+redis = Redis.new
+redis.lock!(name: 'lock_name', seconds: 60) { 'some_code' }
+```
+
+If the lock is already set, raise an exception `Redis::Interlock::Error`.
 
 ## Development and Testing
 
@@ -47,7 +58,7 @@ All checks are run with the following command:
 
 ## Contributing
 
-Bug reports and pull requests are welcome on [GitHub](https://github.com/andxors/gem-template).
+Bug reports and pull requests are welcome on [GitHub](https://github.com/andxors/redis-interlock).
 
 ## License
 

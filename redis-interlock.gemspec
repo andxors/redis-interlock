@@ -1,13 +1,13 @@
-require_relative 'lib/template/version'
+require_relative 'lib/redis/interlock/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'template'
-  spec.version       = Template::VERSION
-  spec.summary       = 'Template for ruby gem'
-  spec.description   = 'Template for ruby gem to create new ruby gem'
+  spec.name          = 'redis-interlock'
+  spec.version       = Redis::Interlock::VERSION
+  spec.summary       = 'Simple redis lock'
+  spec.description   = 'Implementation of mutex in Redis'
   spec.authors       = ['Andrey Lun\'s']
   spec.email         = ['andxors@gmail.com']
-  spec.homepage      = 'https://github.com/andxors/gem-template'
+  spec.homepage      = 'https://github.com/andxors/redis-interlock'
   spec.license       = 'MIT'
 
   spec.files         = Dir['lib/**/*.rb', 'bin/*', '[A-Z]*']
@@ -19,4 +19,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rspec',         '~> 3.9'
   spec.add_development_dependency 'rubocops',      '~> 0.1'
   spec.add_development_dependency 'simplecov',     '~> 0.18'
+  spec.add_runtime_dependency 'redis',   '~> 4.2'
+  spec.add_runtime_dependency 'redlock', '~> 1.2'
 end
