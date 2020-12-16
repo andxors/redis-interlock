@@ -1,10 +1,11 @@
 describe Redis do
   describe '#lock!' do
     let(:redis) { described_class.new }
+    let(:lock!) { redis.lock!(name: 'lock_name', seconds: 10) { 1 + 2 } }
 
     context 'when lock is available' do
       it 'executes block' do
-        expect(redis.lock!(name: 'lock_name', seconds: 10) { 1 + 2 }).to eq(3)
+        expect(lock!).to eq(3)
       end
     end
 
@@ -18,7 +19,7 @@ describe Redis do
       end
 
       it 'raises an exception' do
-        expect { redis.lock!(name: 'lock_name', seconds: 10) { 1 + 2 } }.to raise_error(described_class::Interlock::Error)
+        expect { lock! }.to raise_error(described_class::Interlock::Error)
       end
     end
   end

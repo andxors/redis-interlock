@@ -1,7 +1,21 @@
-inherit_gem:
-  rubocops:
-    - 'config/default.yml'
+require:
+  - 'rubocop-performance'
+  - 'rubocop-rspec'
+
+AllCops:
+  TargetRubyVersion: 2.7
+  NewCops: enable
 
 Naming/FileName:
   Exclude:
-    - lib/redis-interlock.rb
+    - 'lib/redis-interlock.rb'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*.rb'
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false

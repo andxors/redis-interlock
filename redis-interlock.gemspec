@@ -14,11 +14,13 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   spec.required_ruby_version = '~> 2.7'
-  spec.add_development_dependency 'bundler',       '~> 2.1'
-  spec.add_development_dependency 'bundler-audit', '~> 0.7'
-  spec.add_development_dependency 'rspec',         '~> 3.9'
-  spec.add_development_dependency 'rubocops',      '~> 0.1'
-  spec.add_development_dependency 'simplecov',     '~> 0.18'
+  spec.add_development_dependency 'bundler',             '~> 2.2'
+  spec.add_development_dependency 'bundler-audit',       '~> 0.7'
+  spec.add_development_dependency 'rspec',               '~> 3.10'
+  spec.add_development_dependency 'rubocop',             '~> 1.6'
+  spec.add_development_dependency 'rubocop-performance', '~> 1.9'
+  spec.add_development_dependency 'rubocop-rspec',       '~> 2.0'
+  spec.add_development_dependency 'simplecov',           '~> 0.20'
   spec.add_runtime_dependency 'redis',   '~> 4.2'
   spec.add_runtime_dependency 'redlock', '~> 1.2'
 end
