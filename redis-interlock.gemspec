@@ -6,8 +6,8 @@ Gem::Specification.new do |spec|
   spec.summary       = 'Simple redis lock'
   spec.description   = 'Implementation of mutex in Redis'
   spec.authors       = ['Andrey Lun\'s']
-  spec.email         = ['andxors@gmail.com']
-  spec.homepage      = 'https://github.com/andxors/redis-interlock'
+  spec.email         = ['underluns@gmail.com']
+  spec.homepage      = 'https://github.com/underluns/redis-interlock'
   spec.license       = 'MIT'
 
   spec.files         = Dir['lib/**/*.rb', 'bin/*', '[A-Z]*']

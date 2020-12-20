@@ -58,7 +58,7 @@ All checks are run with the following command:
 
 ## Contributing
 
-Bug reports and pull requests are welcome on [GitHub](https://github.com/andxors/redis-interlock).
+Bug reports and pull requests are welcome on [GitHub](https://github.com/underluns/redis-interlock).
 
 ## License
 
